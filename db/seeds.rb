@@ -11,3 +11,13 @@ CSV.foreach('archive.csv', headers: true) do |row|
     ) 
 end
 
+VergeArticle.destroy_all
+
+CSV.foreach('verge.csv', headers: true) do |row|
+    VergeArticle.create(
+        title: row['title'],
+        author: row['author'],
+        url: row['url'],
+    ) 
+end
+

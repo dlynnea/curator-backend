@@ -1,0 +1,2 @@
+class VergeArticle < ApplicationRecord
+end
