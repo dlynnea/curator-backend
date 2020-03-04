@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::API
 
-    before_action :authorized
+    # before_action :authorized
 
     def encode_token_and_render_with_user
         secret = Rails.application.secrets.secret_key_base[0]
