@@ -2,9 +2,14 @@ class ApplicationController < ActionController::API
 
     before_action :authorized
 
-    def encode_token(payload)
+    def encode_token_and_render_with_user
         secret = Rails.application.secrets.secret_key_base[0]
-        JWT.encode(payload, secret)
+        payload = {
+            user_id: @user.id,
+            username: @user.username
+        }
+        token = JWT.encode(payload, secret)
+        render json: { user: UserSerializer.new(@user), token: token }
     end
 
     def auth_header
