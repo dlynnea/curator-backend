@@ -21,3 +21,13 @@ CSV.foreach('verge.csv', headers: true) do |row|
     ) 
 end
 
+MbgVerticle.destroy_all
+
+CSV.foreach('mgb-featured.csv', headers: true) do |row|
+    MbgVerticle.create(
+        title: row['title'],
+        url: row['url'],
+        author: row['author']
+    ) 
+end
+
