@@ -6,13 +6,13 @@ class ArticlesController < ApplicationController
     end
 
     def show
+        @article = Article.find(params[:id])
         render json: @article
     end
 
     private
 
-    def set_article
-        @article = Article.find(params[:id])
-    end
-
+    # def set_article
+    #     @article = Article.find(params[:id])
+    # end
 end

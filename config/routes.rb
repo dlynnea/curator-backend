@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :verge_articles
   resources :user_articles
   resources :articles
   resources :users
