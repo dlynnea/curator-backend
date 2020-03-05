@@ -10,9 +10,4 @@ class ArticlesController < ApplicationController
         render json: @article
     end
 
-    private
-
-    # def set_article
-    #     @article = Article.find(params[:id])
-    # end
 end
