@@ -1,0 +1,2 @@
+class MbgVerticle < ApplicationRecord
+end

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :travels
+  resources :mbg_verticles
   resources :verge_articles
   resources :user_articles
   resources :articles

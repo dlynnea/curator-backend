@@ -2,7 +2,7 @@ require 'jwt'
 
 class AuthController < ApplicationController
 
-    skip_before_action :authorized
+    # skip_before_action :authorized
 
     def login
 

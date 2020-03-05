@@ -21,3 +21,31 @@ CSV.foreach('verge.csv', headers: true) do |row|
     ) 
 end
 
+MbgVerticle.destroy_all
+
+CSV.foreach('mgb-featured.csv', headers: true) do |row|
+    MbgVerticle.create(
+        title: row['title'],
+        url: row['url'],
+        author: row['author']
+    ) 
+end
+
+Travel.destroy_all
+
+CSV.foreach('feat.csv', headers: true) do |row|
+    Travel.create(
+        title: row['title'],
+        url: row['url'],
+        summary: row['summary']
+    ) 
+end
+
+CSV.foreach('three.csv', headers: true) do |row|
+    Travel.create(
+        title: row['title'],
+        url: row['url'],
+        summary: row['summary']
+    ) 
+end
+
