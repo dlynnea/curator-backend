@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2020_03_05_052033) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "articles", force: :cascade do |t|
     t.string "title"
     t.string "author"
@@ -38,8 +41,8 @@ ActiveRecord::Schema.define(version: 2020_03_05_052033) do
   end
 
   create_table "user_articles", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "article_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "article_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["article_id"], name: "index_user_articles_on_article_id"
